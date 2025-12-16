@@ -229,6 +229,119 @@ header {
   box-shadow: var(--accent-focus-ring);
 }
 
+/* --- 4. Bubble Segment Buttons (Teens / Companies) --- */
+.segment-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.22rem;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  padding-left: 0.26rem;
+  padding-right: 0.26rem;
+}
+
+.segment-bubble {
+  position: relative;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  color: var(--text-soft);
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 112px;
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    text-shadow var(--transition-fast);
+}
+
+.segment-bubble::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.96));
+  opacity: 0;
+  transform: scale(0.98);
+  transition:
+    opacity var(--transition-med),
+    transform var(--transition-med);
+  z-index: -1;
+}
+
+.segment-bubble span {
+  position: relative;
+}
+
+.segment-bubble-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(148, 163, 184, 0.8), rgba(55, 65, 81, 1));
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8);
+  opacity: 0.65;
+  transform: translateY(0.5px);
+  transition:
+    background var(--transition-fast),
+    opacity var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.segment-bubble:hover {
+  color: #e5e7eb;
+  text-shadow: 0 0 12px rgba(148, 163, 184, 0.8);
+  transform: translateY(-0.3px);
+}
+
+.segment-bubble:hover .segment-bubble-indicator {
+  opacity: 0.9;
+  transform: translateY(0.5px) scale(1.05);
+}
+
+.segment-bubble.is-active,
+.segment-bubble[aria-pressed="true"] {
+  color: #0f172a;
+  text-shadow: none;
+}
+
+.segment-bubble.is-active::before,
+.segment-bubble[aria-pressed="true"]::before {
+  opacity: 1;
+  transform: scale(1);
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  box-shadow:
+    0 14px 30px rgba(34, 211, 238, 0.45),
+    0 0 0 1px rgba(8, 47, 73, 0.9);
+}
+
+.segment-bubble.is-active .segment-bubble-indicator,
+.segment-bubble[aria-pressed="true"] .segment-bubble-indicator {
+  background: radial-gradient(circle, #e0f2fe 0, var(--accent-strong) 45%, #0369a1 100%);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
+  opacity: 1;
+  transform: translateY(0.5px) scale(1.08);
+}
+
+.segment-bubble:focus-visible {
+  outline: none;
+  box-shadow: var(--accent-focus-ring);
+}
+
 /* --- 4. Content Sections (Cards) --- */
 section {
   max-width: var(--content-width);
