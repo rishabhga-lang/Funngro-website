@@ -257,7 +257,6 @@ header {
 
 .segment-bubble {
   position: relative;
-  border: none;
   border-radius: var(--radius-full);
   padding: 0.5rem 1.25rem;
   font-size: 0.86rem;
@@ -277,6 +276,7 @@ header {
     color var(--transition-fast),
     transform var(--transition-fast),
     text-shadow var(--transition-fast);
+  text-decoration: none;
 }
 
 .segment-bubble::before {
