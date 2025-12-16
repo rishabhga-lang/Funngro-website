@@ -1,17 +1,17 @@
 /* --- 1. CSS Variables & Themes --- */
 :root {
-  /* Default Theme: "Deep Space" */
-  --bg-color: #0f172a;
-  --bg-gradient: radial-gradient(circle at top right, #1e293b, #0f172a);
-  --header-bg: rgba(2, 6, 23, 0.85); /* Semi-transparent for glass effect */
-  --text-primary: #e5e7eb;
-  --text-secondary: #94a3b8;
-  --accent-color: #38bdf8;
-  --accent-glow: rgba(56, 189, 248, 0.5);
-  --card-bg: rgba(30, 41, 59, 0.5);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --transition-speed: 0.3s;
-  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Theme: "Cyberpunk Neon" */
+  --bg-color: #050505;
+  --bg-gradient: linear-gradient(45deg, #1a0b2e, #050505);
+  --header-bg: rgba(20, 20, 20, 0.9);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --accent-color: #ff007f; /* Hot Pink */
+  --accent-glow: rgba(255, 0, 127, 0.6);
+  --card-bg: rgba(30, 30, 30, 0.6);
+  --border-color: #ff007f; /* Pink borders */
+  --transition-speed: 0.2s;
+  --font-main: 'Courier New', Courier, monospace; /* Tech font */
 }
 
 /* --- 2. Global Resets & Body --- */
@@ -130,3 +130,4 @@ footer {
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
+
